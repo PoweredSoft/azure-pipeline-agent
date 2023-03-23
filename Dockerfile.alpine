@@ -1,0 +1,47 @@
+FROM alpine:3.17.2
+
+RUN apk update
+RUN apk add --upgrade apk-tools
+RUN apk upgrade --available
+
+RUN apk --no-cache add \
+    bash \
+    tar \
+    jq \
+    ca-certificates \
+    git \
+    build-base \
+    curl \
+    libffi \
+    libffi-dev \
+    openssl \
+    python3-dev \
+    python3 \
+    py3-pip \
+    icu-libs \
+    krb5-libs \
+    libgcc \
+    libintl \
+    libssl1.1 \
+    libstdc++ \
+    zlib \
+    libgdiplus
+
+
+RUN pip install psutil
+
+# Install Azure Cli
+RUN pip install azure-cli
+
+ENV TARGETARCH=linux-x64
+
+# DEV ENV
+ENV AZP_URL=
+ENV AZP_TOKEN=
+
+WORKDIR /azp
+
+COPY ./files/start.sh .
+RUN chmod +x start.sh
+
+ENTRYPOINT ["tail", "-f", "/dev/null"]

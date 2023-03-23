@@ -1,0 +1,12 @@
+version: '3.4'
+
+services:
+  azure-pipeline-agent:
+    image: mathiaspoweredsoft/azure-pipeline-agent:latest
+    restart: always
+    environment:
+      AZP_URL: <AZP_URL>
+      AZP_TOKEN: <AZP_PAT>
+      # AZP_AGENT_NAME: <AZP_AGENT_NAME>
+      # AZP_POOL: <AZP_POOL>
+      # AZP_WORK: <AZP_WORK>
