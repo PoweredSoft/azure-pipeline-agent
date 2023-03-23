@@ -2,4 +2,5 @@
 docker build -t mathiaspoweredsoft/azure-pipeline-agent:<version> mathiaspoweredsoft/azure-pipeline-agent:latest .
 
 # Publish
-docker push 
+docker push mathiaspoweredsoft/azure-pipeline-agent:<version>
+docker push mathiaspoweredsoft/azure-pipeline-agent:latest
