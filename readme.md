@@ -7,3 +7,9 @@ docker build -t mathiaspoweredsoft/azure-pipeline-agent:<version> mathiaspowered
 # Publish
 docker push mathiaspoweredsoft/azure-pipeline-agent:<version>
 docker push mathiaspoweredsoft/azure-pipeline-agent:latest
+
+# Check for latest azure pipeline agent version
+```
+docker build -t psapa-checkversion -f checkversion.Dockerfile .
+docker run psapa-checkversion
+```
